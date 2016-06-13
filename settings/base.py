@@ -51,7 +51,6 @@ THIRD_PARTY_APPS =  (
     'rest_framework',
     'MySQLdb',
     'bootstrap_pagination',
-    ''
 )
 LOCAL_APPS = (
     'applications.movies',
