@@ -9,4 +9,12 @@ Installation steps:
  ☐ if everything is ok then 'rm myproject/settings.py'
 
  helper-documentation:
-  ☐ https://github.com/smrkem/Django-TDD-goat-tutorial
+  ☐ https://github.com/smrkem/Django-TDD-goat-
+
+
+todo:
+  ☐ Creating a list of movies
+☐  only authenticate user can see the list of movies
+☐  only users that has a edit.permission are able to edit a movie
+☐
+☐ Right now I'm stock I'm not sure that I do understand django-allauth
