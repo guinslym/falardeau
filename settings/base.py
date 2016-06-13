@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 WSGI_APPLICATION = 'falardeau.wsgi.application'
 ROOT_URLCONF = 'falardeau.urls'
-
+SITE_ID=1
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import logging
 import os
@@ -51,6 +51,10 @@ THIRD_PARTY_APPS =  (
     'rest_framework',
     'MySQLdb',
     'bootstrap_pagination',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.dropbox',
 )
 LOCAL_APPS = (
     'applications.movies',
@@ -79,6 +83,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
+
             ],
         },
     },
@@ -158,4 +163,6 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'django.contrib.auth.backends.RemoteUserBackend',
+    #allauth
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
