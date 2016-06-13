@@ -24,7 +24,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('allauth.urls')),
-     url(r'^', include('applications.falardeau.urls')),
+     url(r'^', include('applications.movies.urls')),
 ]
 #Static files serves with WhiteNoise (pip install WhiteNoise)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
