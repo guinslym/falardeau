@@ -51,10 +51,6 @@ THIRD_PARTY_APPS =  (
     'rest_framework',
     'MySQLdb',
     'bootstrap_pagination',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.dropbox',
 )
 LOCAL_APPS = (
     'applications.movies',
@@ -163,8 +159,6 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'django.contrib.auth.backends.RemoteUserBackend',
-    #allauth
-    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 LOGIN_REDIRECT_URL = "/"
