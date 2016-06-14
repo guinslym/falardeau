@@ -154,3 +154,25 @@ Traceback (most recent call last):
     return Database.Cursor.execute(self, query, params)
 django.db.utils.OperationalError: no such table: movies_film
 [2016-06-14 17:39:00,658] WARNING % : Not Found: /favicon.ico
+[2016-06-14 17:40:53,736] WARNING % : Not Found: /account/login
+[2016-06-14 17:41:12,218] ERROR % : Internal Server Error: /accounts/dropbox/login/
+Traceback (most recent call last):
+  File "/home/guinsly/.pyenv/versions/django1.9.3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/guinsly/.pyenv/versions/django1.9.3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/guinsly/.pyenv/versions/django1.9.3.4.3/lib/python3.4/site-packages/allauth/socialaccount/providers/oauth/views.py", line 34, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/guinsly/.pyenv/versions/django1.9.3.4.3/lib/python3.4/site-packages/allauth/socialaccount/providers/oauth/views.py", line 61, in dispatch
+    client = self._get_client(request, callback_url)
+  File "/home/guinsly/.pyenv/versions/django1.9.3.4.3/lib/python3.4/site-packages/allauth/socialaccount/providers/oauth/views.py", line 39, in _get_client
+    app = provider.get_app(request)
+  File "/home/guinsly/.pyenv/versions/django1.9.3.4.3/lib/python3.4/site-packages/allauth/socialaccount/providers/base.py", line 38, in get_app
+    return SocialApp.objects.get_current(self.id, request)
+  File "/home/guinsly/.pyenv/versions/django1.9.3.4.3/lib/python3.4/site-packages/allauth/socialaccount/models.py", line 31, in get_current
+    provider=provider)
+  File "/home/guinsly/.pyenv/versions/django1.9.3.4.3/lib/python3.4/site-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/guinsly/.pyenv/versions/django1.9.3.4.3/lib/python3.4/site-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+allauth.socialaccount.models.DoesNotExist: SocialApp matching query does not exist.
