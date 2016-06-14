@@ -23,6 +23,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-     url(r'^', include('applications.movies.urls', namespace="movies")),
+     url(r'^account/', include('applications.account.urls', namespace="account")),
+     url(r'^movies/', include('applications.movies.urls', namespace="movies")),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

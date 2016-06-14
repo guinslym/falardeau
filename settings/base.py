@@ -53,6 +53,7 @@ THIRD_PARTY_APPS =  (
     'bootstrap_pagination',
 )
 LOCAL_APPS = (
+    'applications.account',
     'applications.movies',
 )
 
@@ -139,7 +140,7 @@ CKEDITOR_CONFIGS = {
         }],
     },
 }
-
+'''
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -162,3 +163,4 @@ AUTHENTICATION_BACKENDS = (
 )
 
 LOGIN_REDIRECT_URL = "/"
+'''
