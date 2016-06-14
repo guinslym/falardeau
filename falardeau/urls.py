@@ -1,7 +1,7 @@
-"""ohmy404 URL Configuration
+"""bookmarks URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.8/topics/http/urls/
+    https://docs.djangoproject.com/en/1.9/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -10,20 +10,23 @@ Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
 Including another URLconf
-    1. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+    1. Import the include() function: from django.conf.urls import url, include
+    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf import settings
-from django.conf.urls.static import static
-from django.conf.urls import url, include, handler404, handler500
-from django.conf.urls import include, url
+from django.conf.urls import url
+from django.conf.urls import include
 from django.contrib import admin
 
-#handler404 = 'applications.websites.views.handler404'
-#handler500 = 'applications.websites.views.handler500'
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-     url(r'^account/', include('applications.account.urls', namespace="account")),
-     url(r'^movies/', include('applications.movies.urls', namespace="movies")),
+    url(r'^admin/', admin.site.urls),
+    url(r'^account/', include('applications.account.urls', namespace="account")),
+    url(r'^movies/', include('applications.movies.urls', namespace="movies")),
+    url('social-auth/',include('social.apps.django_app.urls', namespace='social')),
+
 ]
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
