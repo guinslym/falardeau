@@ -5,3 +5,5 @@ Models:
 
 
 todo:
+  ☐ This app contains a namespace 'account'
+☐ make sure that in applications.account.templates.registration that all the url contains the namespace i.e <a href="{% url 'account:register' %}"
